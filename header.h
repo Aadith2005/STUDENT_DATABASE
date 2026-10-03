@@ -12,4 +12,6 @@ typedef struct student{
 
 void stud_add(ST **);
 int count(ST *);
-void stud_show(ST **);
+void stud_show(ST *);
+void roll(ST **);
+

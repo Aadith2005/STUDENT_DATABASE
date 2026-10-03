@@ -26,7 +26,7 @@ int main()
 			    break;
 		    case 'D':
 	            case 'd':
-			  //  stud_del(&head);
+			    stud_del(&head);
 			    break;
 		    case 'S':
 	            case 's':
@@ -50,7 +50,7 @@ int main()
 			    system("clear");
 			    return 0;
 		    default :
-			    printf("invalid/n");
+			    printf("invalid\n");
 			    break;
 		}
 	}while(1);
@@ -64,3 +64,28 @@ int count(ST *ptr){
 		count++;//count the node
 		ptr=ptr->next; //move next node
 	}}
+
+void roll(ST** ptr)
+{
+	ST* temp=(*ptr);
+
+        
+        char ch1='\0',ch2;
+        int count;
+        while(temp!=NULL)
+                {
+			 ch2=temp->name[0];
+                         if(ch1!=ch2)
+			 {
+				 ch1=ch2;
+				 count=1;
+			 }
+			 else
+			 {
+				 count++;
+			 }
+			 sprintf(temp->roll,"V25CE9%c%d",ch2,count);
+                         temp=temp->next;
+                         
+        }
+}
