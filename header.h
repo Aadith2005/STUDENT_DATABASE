@@ -14,4 +14,9 @@ void stud_add(ST **);
 int count(ST *);
 void stud_show(ST *);
 void roll(ST **);
+void stud_mod(ST** );
+void roll_mod(ST**);
+void name_mod(ST**);
+void modify(ST* );
+
 

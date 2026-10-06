@@ -1,5 +1,9 @@
 #include"header.h"
 void roll_del(ST**);
+void name_del(ST**);
+
+
+
 void stud_del(ST** ptr)
 	{
 
@@ -9,9 +13,9 @@ void stud_del(ST** ptr)
 		}
 
 		unsigned char op;
-		printf("delete by Roll number (R/r\n");
-		printf("delete by Name (N/n)\n");
-		printf("enter yourchoice \n");
+		printf("delete by Roll number (R/r): \n");
+		printf("delete by Name (N/n): \n");
+		printf("enter yourchoice: \n");
 		scanf(" %c",&op);
 		switch(op)
 		{
@@ -19,37 +23,68 @@ void stud_del(ST** ptr)
 			case 'r':
 			  roll_del(ptr);
 			  break;
+
+			case 'N':
+			case 'n':
+			  name_del(ptr);
+			  break;
+
+		        default :
+			  printf("INVALID CHOICE:");
+			  break;
+			
 		}
 
                            
 	}	
-void roll_del(ST **ptr){
-	char roll;
+void roll_del(ST** ptr){
+	char roll[10];
 	printf("Enter the RollNo to delete-> ");
-	scanf("%s",&roll);
+	scanf("%s",roll);
 
 	ST *temp=(*ptr);
-	if(temp==ptr)
-{
-	if(temp->roll==roll)
+	
+
+	if(strcasecmp(temp->roll,roll)==0)
 	{
 		*ptr=temp->next;
 		free(temp);
 		temp=NULL;
 	}
-}
 
+	else
+	{
         ST *del;
-	while(temp!=NULL){
-		if(temp->next->roll==roll)
+	while(temp->next!=NULL){
+		if(strcasecmp(temp->next->roll,roll)==0)
+		{
 			del=temp->next;
-		temp->next=temp->next->next;
-
-		free(del);
-		del=NULL;		
-	}
-
-
+			temp->next=del->next;
+			free(del);
+			del=NULL;
+			break;
+		}
+		      
+		temp=temp->next;
+		}}
 }
 
+void name_del(ST** ptr)
+{
+	char name[50];
+	printf("enter the name:\n");
+	scanf(" %s",name);
+	ST* temp=(*ptr);
+	while(temp!=NULL)
+	{
+		if((strcasecmp(temp->name,name))==0)
+		{
+			printf("roll no \t Name \t \n");
+			printf(" %s %s \n",temp->roll,temp->name);
+			roll_del(ptr);
+			break;
+		}
+		temp=temp->next;
+	}
+}
 
