@@ -37,7 +37,7 @@ void roll_mod(ST** ptr){
         scanf("%s",roll);
 
         ST *temp=(*ptr);
-        while(temp->next!=NULL){
+        while(temp!=NULL){
                 if(strcasecmp(temp->roll,roll)==0)
                 {
                         modify(temp);

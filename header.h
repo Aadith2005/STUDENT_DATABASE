@@ -18,5 +18,6 @@ void stud_mod(ST** );
 void roll_mod(ST**);
 void name_mod(ST**);
 void modify(ST* );
+void save(ST *temp);
 
 

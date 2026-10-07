@@ -38,7 +38,7 @@ int main()
 			    break;
 	            case 'V':
 	            case 'v':
-			   // stud_save(head);
+			    stud_save(head);
 			    break;
 	            
                     case 'T':
