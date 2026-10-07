@@ -15,7 +15,7 @@ void stud_del(ST** ptr)
 		unsigned char op;
 		printf("delete by Roll number (R/r): \n");
 		printf("delete by Name (N/n): \n");
-		printf("enter yourchoice: \n");
+		printf("Enter your Choice: \n");
 		scanf(" %c",&op);
 		switch(op)
 		{
