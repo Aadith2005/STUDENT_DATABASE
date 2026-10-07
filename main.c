@@ -43,7 +43,7 @@ int main()
 	            
                     case 'T':
 	            case 't':
-			   // stud_sort (head);
+			    stud_sort(&head);
 			    break;
 	            case 'E':
 	            case 'e':
@@ -63,7 +63,9 @@ int count(ST *ptr){
 	while(ptr!=NULL){
 		count++;//count the node
 		ptr=ptr->next; //move next node
-	}}
+	}
+        return count;
+}
 
 void roll(ST** ptr)
 {

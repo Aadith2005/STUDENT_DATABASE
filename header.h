@@ -19,5 +19,10 @@ void roll_mod(ST**);
 void name_mod(ST**);
 void modify(ST* );
 void save(ST *temp);
+void sort_name(ST**);
+void sort_mark(ST **);
+
+void stud_sort(ST **);
+
 
 
