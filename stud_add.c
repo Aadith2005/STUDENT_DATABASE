@@ -12,6 +12,7 @@ void stud_add(ST **ptr)
 	{
 		new->next =(*ptr);
 		(*ptr)=new;
+		roll(ptr);
 	}
         
 	else
@@ -22,6 +23,7 @@ void stud_add(ST **ptr)
 		{
 			new->next=(*ptr);
 			(*ptr)=new;
+			
 		}
 		else
 		{
